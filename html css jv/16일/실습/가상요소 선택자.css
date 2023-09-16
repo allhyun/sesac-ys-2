@@ -1,0 +1,7 @@
+div.box::before{
+    content:"택시"
+}
+
+div.box::after{
+    content:"빨리"
+}
