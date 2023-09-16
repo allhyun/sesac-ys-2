@@ -1,0 +1,43 @@
+*{
+    color:blue;
+}
+
+/* 태그 선택자*/
+
+/* div{
+    background-color: aquamarine;
+} */
+
+/*클래스 선택자*/
+.orange{
+    color:orange;
+}
+
+.bg-red{
+    background-color: red;
+}
+
+/*아이디선택자*/
+#red{
+    color:red;
+}
+
+/*하위 선택자*/
+/* div .apple{
+    color:rgb(145, 7, 7)
+} */
+
+/*자식 선택자*/
+/* div > .apple{
+    color:rgb(145, 7, 7)
+} */
+
+/* 인접 형제 선택자 */
+h1 + ul{
+    font-size: 20px
+}
+
+/* 일반 형제 선택자 */
+h1 ~ ul{
+    font-size: 20px
+}
