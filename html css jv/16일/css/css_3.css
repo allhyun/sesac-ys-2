@@ -1,0 +1,57 @@
+/* 피피티 자주쓰이는 css속성 */
+ /* px_16px이 기본값, em(배수_2배,3배....) ,rem, % */
+ @font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+ :root {
+    font-size :16px;
+ }
+
+.font-css{
+    font-size: 1.5em;
+    font-weight: 900;
+    font-family: 'Pretendard-Regular';
+    font-style: italic;
+}
+.parent {
+    font-size: 19px;
+}
+
+.child-font {
+    font-size: 2em;
+}
+
+.width-css {
+    background-color: blue;
+    color:white;
+    display: inline-block;
+    max-width: 100%;
+}
+
+.border-css {
+       border: 2px;
+     border-radius:10px;
+}
+
+.circle {
+    background-color: black;
+    border-radius: 10;
+}
+
+.margin-css{
+    border:2px solid black;
+    margin: 10px
+
+}
+
+.box-css{
+    background-color: blueviolet;
+    box-sizing: border-box;
+    width: 200px;
+    height: 200px;
+    padding:20px;
+    border:2px solid black;
+}

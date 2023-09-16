@@ -58,6 +58,7 @@ div.after-el::after{
     font-size: 12px;
     }
 
+    /* 속성선택자 */
     input[name=name]{
         background-color: orange;
     }
