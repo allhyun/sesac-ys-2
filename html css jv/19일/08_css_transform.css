@@ -1,0 +1,36 @@
+img{
+    width:200px;
+}
+
+
+.img-skew:active{
+    transform: skewy(50deg);
+}
+
+.img-rotate:active{
+    transform: rotatey(40deg);
+}
+
+.img-scale:active{
+    transform: scale(5);
+}
+
+.img-translate:active{
+    transform: translate(30px, 30px);
+}
+
+
+/* active 는 클릭 후 변화되는 내용 
+ 클릭 후 2초뒤 크기 500px로 커지고 2초뒤에 trnsform적용되는것.*/
+.img-transform:active{
+    width:500px;
+    top: 100px;
+    transform: perspective(150px) rotatey(40deg);
+    transition: all 2s linear 2s;
+}
+
+
+.img-width:active{
+    width:500px;
+    transition: 2s;
+}
