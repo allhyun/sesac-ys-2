@@ -1,0 +1,89 @@
+.container{
+    display:flex;
+    width:500px;
+    height:500px;
+    background-color: azure;
+}
+
+.container-1{
+    display:flex;
+    width:500px;
+    height:500px;
+    background-color: aqua;
+   flex-wrap: wrap;
+}
+
+.item{
+    width:100px;
+    height:100px;
+    background-color: blueviolet;
+    margin:5px;
+}
+
+.container-2{
+    display:flex;
+    width:500px;
+    height:500px;
+    background-color: pink;
+   flex-wrap: nowrap;
+   justify-content: center
+}
+
+.container-2{
+    display:flex;
+    width:500px;
+    height:500px;
+    background-color: pink;
+   /*flex-wrap: wrap;*/
+   align-items: center;
+   justify-content: center;
+
+}
+.container-3{
+    display:flex;
+    width:500px;
+    height:500px;
+    background-color: pink;
+   align-items: center;
+   justify-content: center;
+   flex-wrap: wrap;
+}
+.container-4{
+    display:flex;
+    width:500px;
+    height:500px;
+    background-color: pink;
+   align-content: center;
+   justify-content: center;
+   flex-wrap: wrap;
+}
+
+.container-5{
+    display:flex;
+    width:500px;
+    height:500px;
+    background-color: pink;
+   align-content: center;
+   flex-direction: column;
+   flex-wrap: wrap;
+}
+
+.container-6{
+    display:flex;
+    width:500px;
+    height:500px;
+    background-color: pink;
+   align-items: center;
+   flex-direction: column;
+   flex-wrap: wrap;
+}
+
+.container-7{
+    display:flex;
+    width:500px;
+    height:500px;
+    background-color: pink;
+   align-items: center;
+   flex-direction: column;
+   flex-wrap: nowrap;
+}
