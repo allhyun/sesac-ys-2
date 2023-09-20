@@ -1,0 +1,46 @@
+header{
+    background-color: rgb(118, 69, 5);
+    color: white;
+    wiidth:100%;
+    height:50px;
+    margin-bottom: 50px;
+}
+
+.menu div{
+    margin: 10px;
+ }
+
+.box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+}
+
+.box1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.box2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box3{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logsign{
+    display: flex;
+}
+
+.logsign div{
+    margin: 10px;
+}
