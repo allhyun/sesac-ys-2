@@ -1,0 +1,30 @@
+.box{
+    position: relative;
+    width:100px;
+    height:100px;
+    background-color: pink;
+    border-radius: 50%;
+    animation: circle 3s linear 1s 6;
+}
+
+@keyframes circle{
+    0%{
+        left: 0px; top:0px
+    }
+
+    25%{
+        left: 100px; top:0px;
+    }
+
+    50%{
+        left: 100px; top:100px;
+    }
+
+    75%{
+        top:100px; left:0px;
+    }
+
+    100%{
+        top:0px;
+    }
+}

@@ -1,0 +1,15 @@
+p{
+    position: relative;
+    animation: font 3s ease-out;
+}
+
+@keyframes font{
+    from{
+        left: 100%;
+        width: 500%;
+    }
+    to{
+        left: 0%;
+        width: 100%;
+    }
+}

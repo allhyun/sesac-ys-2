@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+</head>
+<body>
+    <script>
+        //콘솔에 출력하는 명령어. 콘솔에 출력을 하겠다. 콘솔은 브라우저에 있음
+        console. log("hello");
+
+        // 알림창으로 뜬다. alert창에 출력을 하겠다.
+        // alert("hello")
+
+
+        //키워드(var/let/const) 변수이름 = 값;
+        /*var name = "dahyun";
+        var name ="dahyun1";
+        var name //변수의 선언
+        name= "dahyun2"; //할당
+
+        //var: 재선언 가능, 재할당 가능
+        var name; //name이라는 변수가 재 선언 되었다.
+        name="dahyun1";
+        name2="dahyun2"; //재할당
+
+        //let: 재선언 불가능, 재할당 가능
+        let name3;
+        name3="dahyun4"
+
+       //const: 재선언 불가능, 재할당 가능..
+       const name4= "dahyun5";
+       //선언하는 순간 할당도 필수이다.
+
+       console.log(name, name2, name3, name4)
+
+       let age= 99;
+
+       console.log("hello",age)
+       console.log(name4 + age)
+       console.log("hello" + age)
+       console.log(`hello ${age} bye bye`)*/
+
+       //배열
+       let name1 ="홍길동";
+       let name2 ="짱구";
+       //(비슷한 특징을 가진 값 들을 )하나의 변수에 여러개의 값을 담고싶을때
+       let fruits=["사과", "바나나", "포도"];
+
+       console.log(fruits);
+       //인덱싱:배열의 원소에 접근할 때 사용
+       //인덱싱 문법 : 변수이름[인덱스]   ex>console.log(변수이름[인덱스:원소의 번호 숫자는 0부터시작])
+       console.log(fruits[0])
+       console.log(fruits[1])
+       console.log(fruits[2])
+
+       //하나의 사물, 사람?에 대한 정보를 저장 순서가 중요하진않음.
+
+       let cat={
+        //key:value
+        name:'장화',
+        age: 80,
+        isCute: true,
+        mew: function()  //메서드, 
+       }
+
+       console.log(cat.name)
+       console.log(cat.isCute)
+       console.log(cat.mew())
+
+    </script>
+</body>
+</html>

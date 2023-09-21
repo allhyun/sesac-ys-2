@@ -1,0 +1,35 @@
+/* keyframe 사용*/
+.box{
+    position : relative;
+    width:100px;
+    height: 100px;
+    background-color: red;
+    animation: animation 2s linear 1s infinite;
+}
+
+/* position이 적용되어있어야 left가 적용됨*/
+@keyframes animation{
+   /* from {
+        left:0 px;
+    }
+
+    to{
+        left:100px;
+    } */
+
+    0%{
+
+    }
+
+    25%{
+
+    }
+
+    50%{
+
+    }
+
+    100%{
+        
+    }
+}

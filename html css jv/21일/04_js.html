@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //명시적 함수 선언
+        function funex1(){
+            console.log("hello"); 
+        } // 함수 선언
+        funex1();//함수를 호출하겠다.
+
+        //함수 표현식으로 선언
+        
+        const funEx2 = function(){
+            console.log("hello2");
+        }
+        
+        const funEx3 = () => {
+            console.log("hello3");
+        }
+
+        funEx2();
+
+        //위 둘의 차이점
+        //명시적 함수는 함수를 작성하기 전에 호출해도 반응 없음
+        /** funex1();
+         * function funex1(){
+            console.log("hello"); 호이스팅방식
+        } * 반응없음 이미 위에서 함수를 읽어서 오류도 뜨지않는 반응없음. /
+
+        //함수표현식으로 호출할경우
+        /* funEx2();
+        const funEx2 = function(){
+            console.log("hello2");
+        }
+        
+        const funEx3 = () => {
+            console.log("hello3");
+        } 오류 발생 함수가 선언된게없다고 판단되어서 오류가 뜸 */
+
+        
+
+        //매개변수 여부, 반환값 여부
+        //매개변수 x,반환값 x
+        function funEx1(){
+            console.log("funEx1");
+            //returnx
+        }
+        //매개변수 ㅇ,반환값 x
+        function funEx2(num){
+            console.log(num);
+            //returnx
+        }
+        //매개변수 : 함수 외부에서 함수 내부로 값을 전달하는 변수
+        let number=5;
+        funEx2(number);
+        //반환값: 함수 내부의 값을 함수 외부로 전달하고 싶을때 사용되는 함수
+
+
+        //매개변수 x, 반환값 ㅇ
+        function funEx3() {
+            console.log("funEx3")
+            return "hello"
+        }
+        let hello= funEx3();
+        console.log(hello);
+        //let hello="hello";//반환값이 hello라는 변수에 들어감
+        //매개변수 ㅇ,반환값 ㅇ
+        function funEx4(num, num1) {
+            console.log("funEx4");
+            return num1 + num2;
+        }
+        let sum = funEx4(2,3);
+        console.log(sum); 
+    </script>
+</body>
+</html>

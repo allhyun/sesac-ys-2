@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //"80"+70=>8070
+       /* let mathscore = prompt("수학 점수")
+        let engscore = prompt("영어 점수")
+
+        console.log(Number(mathscore) + Number(engscore)) */
+        // Number 대문자 주의
+
+
+        //연산자
+        //--------대입 연산자=--------
+        let num1 =5;
+        let nem2 = num1;
+
+        //--------비교 연산자--------
+        // ==,===
+        console.log("80" == 80) //true
+        console.log("80"===80) //false
+        // >=, > , <=, <
+        console.log(70 >= 80) //false
+        console.log(80 > 70) //true
+        //!= 같지않다,!== 같다..?
+        console.log("lily" != "linda") //ture
+        console.log("80" !== 80) //true
+
+        //--------산술연산자--------
+        console.log(80+70)//150
+        console.log(80-70)//10
+        console.log(8*7)//56
+        console.log(10/2)//5
+
+        
+        console.log(10 % 2)//나눴을때 나머지만 나타냄 몫은 안나타남
+
+        let num =5;
+        console.log( num % 2 ==1) //true 5를 2로 나눴을때의 나머지는 1인가? true
+        
+        console.log( num % 2 != 0) //배수인지 아닌지 확인하는 
+
+        console.log( 2**5)//2의 5승
+
+        //--------논리연산자--------
+        //두개이상의 조건을 걸고 싶을때
+        //4< num <8
+        // && <and> 앞 뒤 조건 모두 true =>true
+        console.log( num>4 && num<8)
+        // ||(shift+\) <or> : 앞 뒤 조건 둘 중 하나라도 true => true
+        console.log( num<8 || num<4)
+        console.log( num<5 || num>8)
+        // ! <not>
+        let bool = true;
+        console.log( !bool)//false
+        console.log( !(num <=5)) //false
+        let undef= undefined;
+        console.log(!undef)
+
+
+        //연산자를 줄인다?
+        //자기 자신에 들어있던 값을 활용하여 연산 후,
+        //다시 자신에게 할당하려고할때
+        let num4 =5;
+       // num4=num4+1;//
+        num4 += 1;
+        console.log(num4)
+
+        //--------증감연산자--------
+        //++ +1 ,-- -1
+        let num5=5;
+        console.log(num5++)
+
+        let num6=5, num7=5;
+        let result = num6++;//뒤에쓸경우 같은줄에 먼저 한 후 뒤에 넣겠다.
+        console.log(result) 
+        console.log(num6) 
+
+        let result2 = ++num7; //++하고 num7를 result2값에 넣겠다 같은줄에 있는 연산을 먼저 한 후 담겠다.
+
+        console.log(result2)
+
+
+    </script>
+</body>
+</html>
