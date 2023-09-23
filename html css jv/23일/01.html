@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 반복문</title>
+</head>
+<body>
+    <script>
+        //배열과 for문을 함께 사용하는 이유
+        //비슷한 특징을 가진 값들을 모아둠
+
+        // 초기값; 조건물; 증감문;
+        for(let i = 0; i < 10; i++){
+            //0,1,2,3,4,5,6,7,8,9 => 10번 반복
+            // 명령문(반복하고 싶은 코드)
+            console.log(i, "안녕?");
+        }
+        console.log("끝");
+        let i;
+        for(i=0; i<10; i++) {
+
+        }
+        //위에 두개는 같은 명령문.
+
+        // 중첩 for문
+        for(let i =0; i<5; i++) {
+            for(let j = 0; j<5; j++){ 
+                console.log(`i: ${i}, j:${j}`)
+            }
+        }
+        // 초기값; 조건식; 증감문
+        for(let i = 0; i < 10; i=i+2) {
+            console.log(`i: ${i}`)
+        }
+        for(let i = 10; i > 0; i--) {
+            console.log(`i: ${i}`) 
+        }
+        for(let i = 10; i > 0; i=i-3) {
+            console.log(`i: ${i}`)
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let fruits=["apple","banana","grape"];
+        //console.log(fruits[0])
+        //console.log(fruits[1])
+        //console.log(fruits[2])
+        //for문 사용
+        for(let i=0; i<fruits.length //length는 글자수 배열으 수..?알고싶을때
+        ; i++){
+            console.log(fruits[i])
+
+        }
+
+        //for/of 문 사용
+        //let 변수이름 of 배열
+        let i=["apple","banana","grape","kiwi"];
+        for (let fff of i){
+            //배열의 원소를 하나하나 탐색하면서 그 원소의 값 자체를 변수에 담는다.
+            //i의 원소를 하나하나 탐색하면서 그 i의 값 자체를 fff변수에 담는다.
+            console.log(fff);
+        }
+
+        //[]/forEach 는 함수다
+        //함수 : (재사용 가능성이 있는) 특정 기능을 묶어둠.
+        //메소드-> 함수의 개념에 속함.
+        //객체 내에서 선언되어있는 함수. 
+        //함수 예시
+        const cat= {
+            name:"나비",
+            age:80,
+            mew:function(){
+                console.log("야아옹")
+            }
+            
+
+        }
+        cat.mew();
+        //forEach함수 : 배열.forEach()
+
+        //배열의 원소를 순차적으로 탐색함
+        let fruits2= ["apple", "banana", "grape"];
+        fruits2.forEach((fruits2, index, array)=>{
+            //첫번째 매개변수에는 탐색된 원소
+            //두번째 매개변수에는 인덱스
+            //세번째 매개변수에는 배열
+            console.log(fruits2)
+            console.log(index)
+            console.log(array)
+        })
+        fruits2.forEach((f, i, a)=>{
+
+})
+        //index = 값 array=배열
+        fruits2.forEach(function() {
+            
+        })
+
+        //funtion() 괄호에 이름없으면 그냥 익명함수.
+
+    </script>
+    
+</body>
+</html>
