@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box" class="box"> hello </div>
+   
+
+    <div id="container" class="box item"> hello </div>
+    <span>hello span</span>
+    <br>
+
+    <input type="text" name="email" >
+
+    <div id="box2">
+        <b>hello box2</b>
+    </div>
+
+    <script>
+        console.log(document.documentElement);
+        console.log(document.head);
+        console.log(document.title);
+        console.log(document.body);
+        console.log(document.URL);
+        console.log(document.domain);
+
+        //----요소선택----
+        let elById = document.getElementById("box")//getElement !! 요소 하나만 가져옴.
+           console.log(elById)
+        //요소가 생긴 후 코드가 작성되야함.
+        /*<div id="box"> hello </div>
+    <div id="container"> hello </div> 가 작성된 후에 코드가 작성되야한다는 말.*/
+
+    let elByClass= document.getElementsByClassName("box")
+    console.log(elByClass)
+    //console.log(elByClass[0])
+    //console.log(elByClass[1])
+
+    let elByTag=document.getElementsByTagName('span')
+    console.log(elByTag)
+    //console.log(elByTag[0])
+
+    let elByName=document.getElementsByName("email")
+    console.log(elByName)
+
+    //선택자를 이용하여 요소를 선택
+    let elBySelector =document.querySelector(".box")//위에서 부터 발견된 첫번째 요소 하나만 선택됨.
+    let elBySelectorAll= document.querySelectorAll(".box")//모든 선택자 발견되어서 나타냄
+    console.log(elBySelector)
+    console.log(elBySelectorAll)
+
+
+
+    let elbox2= document.getElementById("box2")
+    // let elbox2= document.querySelector("box2")
+
+    console.log(elbox2)
+    console.log(elbox2.innerText) // 텍스트값만 뽑아옴.
+    console.log(elbox2.innerHTML)// 요소안에 들어가는 내용을 다 가져온다.
+
+    elbox2.innerText ="hello <b>dahyun</b>"
+    //elbox2.innerHTML ="hello <b>dahyun</b>"
+
+
+    </script>
+</body>
+</html>

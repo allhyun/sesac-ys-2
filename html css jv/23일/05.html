@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num=5;
+        let num2= num;
+        num2 +=5;
+        console.log(num,num2)
+        /*num 이라는 값을 num2 공간에 담는다.
+        */
+
+        let arr =[1,2,3,4,5];
+        let arr2= arr;
+        arr2.reverse()
+        console.log(arr,arr2)
+        /* 오브젝트 자료형은 공간 주소값을 공간에 저장한다
+        arr에 저장된 주소값을 arr2의 공간에 담는다.
+        이렇게되면 같은공간을 사용하는? 바라보고있는 상태.
+        그래서 둘다 같은값이 찍힌다.
+        */
+
+        //오브젝트 얕은복사(복사한 척), 일반자료형 깊은복사
+
+        var arr3 = [1,2,3,4];
+        var arr4 = arr3.slice();
+
+        arr4.reverse()
+        console.log(arr3, arr4)
+        //-------------------------------------------
+        //-------------Date객체-----------
+
+        let date= new Date()
+        console.log(date.getFullYear())
+        console.log(date.getMonth()+1)//+1을 해줘야 이번달이 나옴.
+        console.log(date.getDate())
+        console.log(date.getDay())
+        console.log(date.getTime())
+
+        let expired = new Date("2023-09-30").getTime();
+        let today =new Date().getTime();
+
+        if(expired<today){
+            console.log("만료일이 지났어요")
+        } else {
+            console.log("사용할 수 있어요")
+        }
+
+        
+
+
+
+
+    </script>
+</body>
+</html>

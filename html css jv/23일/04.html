@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = [1,2,3,4,5];
+        let arr_filter = arr.filter(function(a){
+            return a>3;
+        });
+        console.log(arr_filter)
+
+        //배열 내부에서 조건에 부합하는 첫번쨰 원소를 값으로 나타냄
+        let val_find = arr.find(function(a) {
+            return a>3;
+        })
+        console.log(val_find)
+
+        let add_map= arr.map(function(a){
+            return a +3;
+        })
+        console.log(add_map)
+
+        let numbers = [1,2,3,4,5,6,7,8,9,10];
+        // .pop() : 배열 끝의 요소를 제거 후 나타남. [1,2,3,4]
+        numbers.pop()
+        console.log("pop", numbers)
+
+        //.shift()
+        numbers.shift()
+        console.log("shift",numbers)
+
+        //.unshift()
+        numbers.unshift(10)
+        console.log("unshift",numbers)
+
+        //.include()
+        console.log("include",numbers.includes(4))
+
+        //.indexOf()
+        console.log("indexOf 5",numbers.indexOf(5))
+        console.log("indexOf 1",numbers.indexOf(1))
+
+        //.revers
+        numbers.reverse()
+        console.log("reverse",numbers)
+
+
+        //[1,2,3].join("") // "123"
+
+        
+        console.log( ["a","p", "p", "le"].join(""))
+
+        console.log( ["a","p", "p", "le"].join(","))
+
+        let str = 'happy day~! '
+        console.log("leght",str.length)
+        //공백 포함해서 숫자 센다.
+
+        //검색창. javascript JavaScript
+        console.log(str.toUpperCase())
+        console.log(str.toLocaleLowerCase())
+
+        console.log("slice",str.slice(5,9))
+
+        console.log("slice", str.slice(5))
+        //숫자 하나만있으면 시작부분부터 끝까지 불러온다.
+
+        //치환한다 replace
+        console.log(str.replace('p','a'))
+
+
+        //엔터 문자 => "\n"
+        //글자기준(?)
+        console.log(str.split(''))
+        //띄어쓰기 기준
+        console.log(str.split(''))
+
+        //메소드체이닝
+
+        /*let ex = 'monster'
+        console.log(ex.split('').reverse().join("..").replace('o','r'))
+
+
+        //메소드ㅡㅡㅡ
+        function split*({
+            let arrr;
+            //문자열을 잘 모르는 코드
+            arrr=["","",""]
+            return arrr
+        })
+
+        //let variable = funcName()
+
+        str.split(" ")
+
+        numbers. push*/
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
