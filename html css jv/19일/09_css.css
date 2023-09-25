@@ -40,7 +40,7 @@
     flex-start; 기본값
     space-between 가장 멀리 떨어트린다
     space-around 여백이 동일하게 설정된다
-    space-evenly 아이템 제외한 나머지 여백들이 동일하게 가겠다.*/
+    spdace-evenly 아이템 제외한 나머지 여백들이 동일하게 가겠다.*/
     /*align-items 도 동일함 */
 }
 
