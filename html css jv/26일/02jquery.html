@@ -37,7 +37,7 @@
     <button type="button" onclick="useAttr()">attr() 사용하기</button>
 
     <div class="container">
-        <div class="box red"></div>
+        <div class="box red" id="red"></div>
         <div class="box orange"></div>
         <div class="box yellow"></div>
 
@@ -52,6 +52,7 @@
 
     <span id="span1">hello</span>
     <button type="button" onclick="useCss()">css함수 사용하기</button>
+    <button type="button" onclick="useText()">text 사용하기</button>
     
     <script>
         //$("선택자").동작함수();
@@ -133,8 +134,10 @@
 
         //자주쓰임
         function controlClass() {
+            const redBox = $("#red")
+            if(redBox.hasClass("red"))
             //$(".box.red").addClass("")
-            $(".box.red").removeClass("red")
+            $("#red").removeClass("red")
 
 
         }
