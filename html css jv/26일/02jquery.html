@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <style>
+        .container{
+            width: 600px;
+            height: 400px;
+            background-color: beige;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+        }
+        .red{
+            background-color: red;
+            }
+        .orange{
+            background-color: orange;
+            }
+        .yellow{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <!-- 자바스크립트와 문법이 다르다. -->
+    
+    <input type="text" name="name" id="input" value="lily"/>
+    <button type="button" onclick="useVal()">val() 사용하기</button>
+    <button type="button" onclick="useAttr()">attr() 사용하기</button>
+
+    <div class="container">
+        <div class="box red"></div>
+        <div class="box orange"></div>
+        <div class="box yellow"></div>
+
+    </div>
+    <button type="button" onclink="useAppend()">append()사용하기</button>
+    <button type="button" onclink="useRemove()">remove()사용하기</button>
+    <button type="button" onclink="useParent()">parent()사용하기</button>
+    <button type="button" onclink="controlClass()">사용하기</button>
+    <br>
+
+
+
+    <span id="span1">hello</span>
+    <button type="button" onclick="useCss()">css함수 사용하기</button>
+    
+    <script>
+        //$("선택자").동작함수();
+        //document.get~~~/document.quertSelectior~~ 
+        //요소.innerHTML / .append();
+
+        $("#input").append()
+        //동작함수가 알아서 여러개여도 적용한다.
+        //console.log($("#input"))
+
+        //id가 input인 태그를 선택하여, 그 input의 value를 설정하는코드
+        //const useVal() = $("#input").val();
+        //document.getElementById("input").value;
+        //console.log(value);??????
+
+        $("#input").val("설정하고싶은 값")
+        //document.getElementById("input").value; ='설정하고 싶은 값'
+
+        function useCss(){
+            //.css():style을 변경
+            const span =$("$span1")
+            span.css("font-size","30px")
+            span.css("color","blue")
+            //$("#span1").css("fonft-size", 30px);
+
+            //js코드로 한다면?
+            //const span = document.getElementById("span1");
+            //span.style ="font-size : 30px; color:blue;"
+
+            
+        }
+        function useAttr() {
+            $("#input").val("")
+            $("#input").attr("placeholder", "이름을 입력하세요");
+            //js : setAttributes()
+                
+            }
+        function useText() {
+            //innerText
+            $("#span1").text("helloooooo");
+
+            //innerHTML
+            $("#span1").html("hello <b>lily</b>");
+        }
+
+        function useAppend() {
+            //.container의 마지막 자식으로 추가
+            $(".container").append(`<div class="box red"></div>`);
+
+            //.container의 첫번째 자식으로 추가
+            $(".container").prepend(`<div class="box red"></div>` );
+
+            //.container의 앞 형제 자식으로 추가
+            $(".container").befor(`<div class="box red"></div>` );
+
+            //.container의 뒤 형제 자식으로 추가
+            $(".container").after(`<div class="box red"></div>` );            
+
+        }
+        function useRemove(){
+           // $(".box.orange").remove();
+
+            //const container = document.quertSelector(".container"); 와 비슷한기능임.밑에꺼
+            $(".container").empty();
+        }
+
+        function useParent(){
+            //parent()
+          console.log( "parent" ,$(".box.red").parent())
+            //parents()
+            console.log( "parents", $(".box.red").parents())
+            //next()
+            console.log( "next", $(".box.red").next())
+            //prev()
+            console.log( "prev", $(".box.orange").prev())
+            //children()
+            console.log( "next", $(".container").children())
+        }
+
+        //자주쓰임
+        function controlClass() {
+            //$(".box.red").addClass("")
+            $(".box.red").removeClass("red")
+
+
+        }
+
+
+
+    </script>
+
+
+</body>
+</html>
