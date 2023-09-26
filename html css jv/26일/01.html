@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 600px;
+            height: 400px;
+            background-color: beige;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+        }
+        .red{
+            background-color: red;
+            }
+        .orange{
+            background-color: orange;
+            }
+        .yellow{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+        <div class="container">
+            <div class="box red"></div>
+            <div class="box orange"></div>
+            <div class="box yellow"></div>
+
+        </div>
+        <!-- input 태그를 선택해서 placeholder 속성 추가 -->
+        <input type="text" name="name"/>
+        <div>
+            <button type="button" onclick="twinckle()">반짝여라</button>
+            <button type="button" onclick="addPlaceholder()">placeholder추가</button>
+            <button type="button" onclick="addBox()">box추가</button> 
+            <button type="button" onclick="removeBox()">box삭제</button> 
+        </div>
+    <script>
+        const boxes = document.querySelectorAll(".box");//문서에 존재하는 모든 요소를 찾아줌
+        const box1 = boxes[0] ;
+        box1.innerHTML = "HELLO";
+
+        console.log(box1.classList);
+
+        //box1.classlist.add() 
+
+        function twinckle(){
+            box1.classList.toggle("red")
+            //if(box1.classList.contains("red"))  box1.classList.remove("red")
+            //else box1.classList.remove("red")
+        }
+        //input 태그를 선택해서 placeholder 속성 추가
+        const input = document.querySelector("input");
+        function addPlaceholder(){
+            input.setAttribute("placerholder", "이름을 입력하게요")
+            input.setAttribute("id" , "input_name")
+        }
+
+        //특정 요소의 자식 요소들에 접근
+        const container = document.querySelector(".container");
+        console.log(container.children[1]) // 컨테이너의 자식요소를 선택 children은 기본적으로 배열을 반환
+
+        //특정 요소의 부모요소에 접근
+        console.log(box1.parentNode) //parentNode는 기본적으로 하나의 요소만 반환
+
+        //특정요소의 형제요소에 접근
+        console.log(box1.nextElementSibling) //선택 요소 다음 요소 하나만 반환
+        console.log(boxes[1].previousElementSibling)//선택 요소 이 전 요소 하나만 반환
+
+        
+        function addBox(){
+            //container선택을 해야함
+            const container2 = document.querySelector(".container");
+            //그 후 마지막에 요소를 추가해야하니
+            //추가할 요소를 만들어야함.
+            const newBox = document.createElement("div"); //태그명을 넣어야한다 ex> span, p ,div 등등
+            //newBox.classList.add("box")//box라는 클래스를 추가하겠다.
+            //newBox.classList.add("red")
+            newBox.className = "box red"
+            //위에 두개 와 동일한 내용.
+
+
+            //그리고 컨테이너의 마지막자식 요소로 추가해야한다. (append, appendChild)
+             container.appendChild(newBox);
+            //container2.append(newBox);
+            //두개의 차이점은? append는 문자열을 인자로 넘길 수 있음.(문자열을 추가할 수도 있음.)container2.append("newBox");문자로 추가
+            //appendChild는 선택된 요소의 틀만 넣을 수 있음.Node 객체만 넘길 수 있음
+
+            //첫번째 자식요소로 추가하는 방법.(prepend)
+            //container2.prepend(newBox);
+
+            //container의 형제로 추가를한다.(before, after)
+            //container2.before(newBox);
+            //container2.after(newBox);                        
+        }
+
+        function removeBox(){
+            //1번 방법
+            //삭제하고싶은 요소 선택
+            const orangebox =document.querySelector(".box.orange ");
+
+            //삭제한다.
+            orangebox.remove()
+
+            //2번방법
+            //삭제하고싶은 요소의 부모요소 선택해서 자식으로 접근
+            //const container2 = document.querySelector(".container")
+            container2.removeChild(container2.children[1]);//container의 자식요소 두번째를 선택하여 삭제하겠다.
+        }
+
+        
+
+
+
+
+    </script>
+</body>
+</html>
