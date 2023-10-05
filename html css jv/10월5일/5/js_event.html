@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트리스너</title>
+    <script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
+  <script>
+   
+    // 아래코드는 container클래스를 가진 div태그가 로드되기 전에 실행을 하게 됨.
+    console.log($(".container"));
+    //바디태그까지 도달하지 못하기에 선택되지 못하게 되어 출력됨.
+
+
+    // 로딩이벤트 : html, body태그 내부까지 로드된 후 실행할 코드 걸어준다.
+    $(document).ready(function(){ //함수를 핸들러라고 보면됨 (특정이벤트가 발생했을때 하고싶은일을 넣으면됨.)
+        //document가 로드되었을떄 익명함수를 실행시켜라 라는 의미.
+        //바디태그가 로드된 후 실행시키고 싶은 코드를 ready안에 넣은 함수
+        console.log($(".container"))
+    })
+
+    //특정 반응이 일어났을경우에 일으키고싶은 이벤트.
+    //위에 코드는 제이쿼리 3.0이상에서는 권장하지않음.
+
+    //jQuary 3.0이상에서부터 권장되는 방식.
+    $(function(){
+        console.log($(".container"))
+    })
+
+
+  </script>
+
+  <style>
+    .container{
+        background-color: cadetblue;
+        width: 200px;
+        height: 200px;
+        margin-top: 10px;
+
+    }
+  </style>
+
+</head>
+<body>
+    <!--로딩 이벤트 : html이 로드된 후 실행할 코드 걸어준다.-->
+    <!-- 제이쿼리 불러오기 cdn -> minified-> 복사 후 헤드태그에 붙이기 -->
+
+    <div class="container"></div>
+
+    <div class="container"></div>
+
+    <input type="password" name="pw">
+
+
+    <script>
+        //화살표함수 : 정적바인딩 함수가 읽히는 순간에 this를 결정하게됨 ->부모요소의 this를 저장함.(아래코드에선 window)
+        //console.log(window) 가 되는것.윈도우가 담김
+        //$(".container").click(() => {
+           // console.log(this);//이벤트를 발생했을때 이벤트가 걸린 .container 요소를 this에 담는다.
+          //  $(this).css("background-color","red")
+
+
+        //일반함수(function함수) : 동적 바인딩
+        //호출할때를 고려해서 this를 결정한다.(이벤트를 발생시킨 요소)
+
+        
+        //마우스이벤트
+        // $(".container").click(function(){
+        //     console.log(this);//이벤트를 발생했을때 이벤트가 걸린 .container 요소를 this에 담는다.
+        //     $(this).css("background-color","red")
+
+            //this에 담긴 요소만 선택되어 바뀐다.<화살표함수로는 안됨 무조건 일반함수로만 설정이 가능함>
+            //화살표함수로 작성하게되면 
+
+            //$(".container").css("background-color","red")//"변경하고싶은 행동" , '변경할 내용'
+        //})//클릭이벤트를 걸고싶은 요소 어떤요소가 클릭되었을떄 어떤 이벤트가 일어나게 할것인가.
+
+
+        //.container 요소에 마우스가 올라갔을때 실행시키고 싶은 코드
+        $(".container").mouseover(function() {
+
+        })
+
+        //.container 요소에 마우스가 나갔을때 실행시키고 싶은 코드
+        $(".container").mouseout(function() {
+
+        })
+
+        //hover: mouseover()/mouseout() 을 한번에 지정 .hover(function()<마우스가 들어갔을때>,function()<마우스가 나갔을때>)
+        $(".container").hover(function(){} , function() {
+
+        })
+
+        //scroll <웹페이지 자체에 스크롤이될떄 하고싶을때는 document를 요소로 설정하면됨.
+        $(document).scroll(function(){
+            //스크롤이 바닥을 도달했을 때
+            // $(document).height() : document의 높이를 구함
+            // 현재 스크롤 위치 : $(window).scrollTop()
+            //if($(document).height() - $(window).height() == $(window).scrollTop(){console.log("hello")}
+            //스크롤이 맨 위에서 내려간 길이 만큼.구하는 코드식 위에꺼임.
+            
+            if(document.body.scrollHeight >= "스크롤위치"){
+                //하고싶은 동작
+            }
+
+            console.log(document.body.scrollHeight) // 스크롤의 길이.알아보는거.
+            console.log("hello")
+        })
+
+
+        //키보드 이벤트:
+        //keydown: 선택한 요소에서 키보드를 누를 이벤트가 발생한 경우
+        //keyup: 선택한 요소에서 키보드를 떼는 이벤트가 발생한 경우
+
+         // $("input[name=pw]").keydown(function(){
+
+
+        //    console.log(this.value);//인풋태그의 값을 가져오겠다.
+
+         //   })
+
+        // $("input[name=pw]").keydown(function(event){
+
+         //   console.log("key: ",event.key);
+            
+         // console.log("value: ",this.value);
+
+         //  })
+
+         //if문사용
+
+        //    $("input[name=pw]").keyup(function(event){
+
+        //       if( event.key == "Enter" ) console.log("value: ",this.value);//로그인();
+        //       //if(event.key == 13) console.log("value: ",this.value);//
+
+        //        })
+        
+
+
+        //on 메소드 : 이벤트를 걸겠다.
+
+        $("선택자").on("이벤트타입","핸들러 함수");  
+        $("input[name=pw]").on("keyup",function(event){
+            if( event.key == "Enter" ) console.log("value: ",this.value);
+        });     
+
+
+
+
+       
+
+
+    </script>
+</body>
+</html>

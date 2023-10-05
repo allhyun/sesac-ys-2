@@ -1,0 +1,60 @@
+.container{
+    width: 500px;
+    height: 500px;
+    background-color: antiquewhite;
+    display:flex;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+}
+
+.red {
+    background-color: red;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+/* @media 미디어 유형 and (크기 규칙) */
+/* @media print { 
+    .container{ 
+        background-color: blue;
+     }  
+    
+ }   */
+/* 프린트할때 컨테이너 백그라운드 색을 변경하겠다 */
+
+/* @media screen and (min-width:700px) {
+  
+    .container{ 
+        background-color: blue;
+    }
+   
+} */
+  /* 700px 이상일 경우 내부에 있는 조건으로 덮어쓰겠다*/
+   /* 700px 이하는 기본css를 사용하겠다는 의미임. */
+/* @media screen and (max-width:700px) {
+    
+    .yellow{ 
+        background-color: rgb(24, 184, 69);
+    }
+   
+
+
+} */
+/* 700px 이하일 경우 내부에 있는 조건으로 덮어쓰겠다*/
+/* 700px 이하는 기본css를 사용하겠다는 의미임. */
+
+
+@media screen and ( max-width : 500px) {
+    .container{
+        flex-direction: column;
+    }
+}

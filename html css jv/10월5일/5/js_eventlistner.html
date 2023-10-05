@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container{
+            background-color: cadetblue;
+            width: 200px;
+            height: 200px;
+            margin-top: 10px;
+    
+        }
+      </style>
+</head>
+<body>
+    <div class="container"> </div>
+    <div class="container"> </div>
+    <script>
+
+    const container = document.getElementsByClassName("container")
+
+    //제이쿼리 on과 비슷
+
+    // container[0].addEventListner("click", function(){
+        // this.style.backgroundColor = "red";
+    // })
+
+    //요소를 제대로 선택했나를 생각해야한다 위에꺼는 배열을 선택..??
+    //addEventListener 는 하나만 선택할 수 있다.
+
+    for(let i = 0; i< container.length; i++ ){
+        container[i].addEventListener("click", function(){
+        this.style.backgroundColor = "red";
+    })}
+
+    //load 이벤트 = 로딩이벤트(제이쿼리)와 같음
+    //change이벤트
+    //인풋태그에 입력후 마우스포커스를 다른곳에 클릭했다가 ....뭐 그렇다..내용이 변경이 되었으면 나타내는 이벤트
+
+
+    </script>
+</body>
+</html>
