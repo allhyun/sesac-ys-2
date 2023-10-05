@@ -1,7 +1,14 @@
+:root{
+    /*--main-color :*/
+    --color-main: navy;
+    --height-header-lg: 80px;
+}
+
 .container{
+    margin-top: var(--height-header-lg);
     width: 500px;
     height: 500px;
-    background-color: antiquewhite;
+    background-color: var(--color-main);
     display:flex;
 }
 
