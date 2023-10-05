@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+        /*let age = prompt("나이를 적으시오")
+        if ( age >= 20 ){
+            console.log("성인")
+        }else if(age >= 17 && age < 20){
+            console.log("고등학생")
+        }else if(age <17 && age >=14){
+            console.log("중학생")
+        }else if(age<14 && age>=8){
+            console.log("초등학생")
+        }else{ console.log ("유아")}*/
+
+        //let now = new Date().getHours();
+
+       // let hour = now >=12 && now < 24 ? '오후' : '오전';
+        //console.log(hour)
+
+        let sum = 0;
+        for( let i = 0; i<101; i++) {
+            if( i%2 ==0 || i%5==0)
+            sum += i;
+        } console.log(sum)
+
+
+        let num = 0;
+        for( let n = 0; n<10001 ; n++){
+            if( n % 13==0 && n % 3==0){
+                console.log(n)
+            }
+        }
+
+        let star = Number(prompt("숫자를 입력하세요"));
+
+        let stars = "";
+        for( let p = 1; p <= star; p++){
+            console.log(stars += "*")
+        }
+        console.log("\n")
+    </script>
+    
+</body>
+</html>
