@@ -103,13 +103,15 @@
         //3) 내용 input의 value를 가져온다.
         //4) 3)에서 가져온 값을 캘린더에 추가한다.
 
+        
+
 
         function addSchedule(){ // 2) 작성버튼에 걸릴 함수를 정의한다.
              const content =$("input[name=text]").val()
             //내가 원하는 td태그 선택
             // id를 부여한다?
             
-            $(date).append('content')//내가 원하는 td태그 선택
+            $(date).append(`<div>${content}</div>`)//내가 원하는 td태그 선택
         }
 
     //    $("td").on("click", function(){

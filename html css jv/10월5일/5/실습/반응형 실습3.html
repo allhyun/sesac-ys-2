@@ -8,6 +8,7 @@
       src="https://kit.fontawesome.com/837ff3adc1.js"
       crossorigin="anonymous"
     ></script>
+    
     <style>
       :root {
         --nav-height-lg: 100px;
@@ -37,29 +38,45 @@
       header .inner {
         background-color: lightblue;
         height: 100%;
-        display:flex;
       }
 
       /* LOGO */
       header .inner .logo {
         color: white;
         font-size: 30px;
+        position: relative;
+         top: 30px;
       }
 
       header .inner .menu {
-        justify-content: space-between;
-        align-items: center;
+        display: flex;    
+        justify-content: center;
       }
 
       header .inner .menu li {
+        margin: 10px;
+        font-weight: bold;
+
       }
 
       @media screen and (max-width:768px){
+          header .inner .menu{
+          display : block;
+          justify-content: center;
+          margin-top: 60px;
+          background-color: rgb(199, 230, 242);         
+        }
+
+        div{
+          text-align: center;
+        }
 
       }
 
       /* 미디어 쿼리 작성 768px 이하일 때  */
     </style>
+    
+
   </head>
   <body>
     <header>
@@ -75,6 +92,16 @@
         </ul>
       </div>
     </header>
+    <script>
+
+      $('i').click(function(){
+        $( '.menu' ).toggle(  );
+
+      });
+
+    </script>
+  
+
   </body>
 </html>
 
