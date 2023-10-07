@@ -8,12 +8,24 @@
   src="https://code.jquery.com/jquery-3.7.1.min.js"
   integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
   crossorigin="anonymous"></script>
+
+  <style>
+    tr>td:first-child,
+    tr>th:first-child{
+        color:red;
+    }
+    tr>td:last-child,
+    tr>th:last-child{
+        color:blue;
+    }    
+
+  </style>
   
 </head>
 <body>
     날짜: <input type="text" name="date" value="text"/>
-    내용: <input type="text" name="text">
-    <button type="button" onclink="addSchedule()">작성</button>
+    내용: <input type="text" name="todo">
+    <button type="button" onclick="addSchedule()">작성</button>
     
 
 
@@ -23,13 +35,13 @@
           
         <tbody >
             <tr>
-                <td style="color:red">日</td>
+                <td>日</td>
                 <td>月</td>
                 <td>火</td>
                 <td>水</td>
                 <td>木</td>
                 <td>金</td>
-                <td style="color:blue">土</td>
+                <td >土</td>
             </tr>
             <tr>
                 <td ></td>
@@ -38,46 +50,46 @@
                 <td></td>
                 <td></td>
                 <td >1</td>
-                <td style="color:blue">2</td>
+                <td >2</td>
             </tr>
             <tr>
-                <td style="color:red">3</td>
+                <td >3</td>
                 <td>4</td>
                 <td>5</td>
                 <td>6</td>
                 <td>7</td>
                 <td>8</td>
-                <td style="color:blue">9</td>
+                <td >9</td>
             </tr>
             <tr>
-                <td style="color:red">10</td>
+                <td >10</td>
                 <td>11</td>
                 <td>12</td>
                 <td>13</td>
                 <td>14</td>
                 <td>15</td>
-                <td style="color:blue">16</td>
+                <td>16</td>
             </tr>
             <tr>
-                <td style="color:red">17</td>
+                <td>17</td>
                 <td>18</td>
                 <td>19</td>
                 <td>20</td>
                 <td>21</td>
                 <td>22</td>
-                <td style="color:blue">23</td>
+                <td>23</td>
             </tr>
             <tr>
-                <td style="color:red">24</td>
+                <td >24</td>
                 <td>25</td>
                 <td>26</td>
                 <td>27</td>
                 <td>28</td>
                 <td>29</td>
-                <td style="color:blue">30</td>
+                <td>30</td>
             </tr>
             <tr>
-                <td style="color:red">31</td>
+                <td>31</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -91,10 +103,24 @@
         let date; //2-4를 해결하기위한 키포인트
        $("td").on("click", function(){  //1) td태그에 클릭이벤트 걸기
         console.log(this); //클릭한 td요소가 담긴다
+
+        //함수를 사용하게되면 this라는걸 사용가능하게됨 this에 함수를 담는것?
+
+        //1번방법
+        const dateel = $(this).text();
+        //요소.value = ""; 자바스크립트에서 value선택하는방법임.
+        $("input[name=date]").val(dateel);
+        date=this;
+        console.log(date);
+
+
+        //2번방법
         //$("input[name=date]").val($(this).text()) // 클릭된 td태그의 택스트를 가져오기 , 날짜 input태그 선택하기 , 선택된 input태그의 value로 가져온 날짜 넣기
         //혹은 
-        $("input[name=date]").val(this.innerText) //Text 대문자 주의!
-        date =this; //2-4를 해결하기위한 키포인트
+        // $("input[name=date]").val(this.innerText) //Text 대문자 주의!
+        // date =this; 
+        //2-4를 해결하기위한 키포인트
+
         })
 
         //2. 내용 input에 작성한 값을 캘린더에 추가하기
@@ -103,15 +129,16 @@
         //3) 내용 input의 value를 가져온다.
         //4) 3)에서 가져온 값을 캘린더에 추가한다.
 
-        
-
-
-        function addSchedule(){ // 2) 작성버튼에 걸릴 함수를 정의한다.
-             const content =$("input[name=text]").val()
+        function addSchedule(){         // 2) 작성버튼에 걸릴 함수를 정의한다.
+            console.log("aaaa")
+             const text =$("input[name=todo]").val()
+             console.log("aaa",text)
             //내가 원하는 td태그 선택
             // id를 부여한다?
+            $(date).append(`<div>${text}</div>`);
             
-            $(date).append(`<div>${content}</div>`)//내가 원하는 td태그 선택
+            // $(date).append(`<div>${content}</div>`)
+            //내가 원하는 td태그 선택
         }
 
     //    $("td").on("click", function(){

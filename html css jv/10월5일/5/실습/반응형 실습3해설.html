@@ -8,10 +8,6 @@
       src="https://kit.fontawesome.com/837ff3adc1.js"
       crossorigin="anonymous"
     ></script>
-    <script
-  src="https://code.jquery.com/jquery-3.7.1.min.js"
-  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-  crossorigin="anonymous"></script>
     <style>
       :root {
         --nav-height-lg: 100px;
@@ -33,7 +29,6 @@
         width: 100%;
         height: var(--nav-height-lg);
         z-index: 100;
-        
         /* position: fixed; */
       }
 
@@ -41,45 +36,65 @@
       header .inner {
         background-color: lightblue;
         height: 100%;
+        display:flex;
+        justify-content: center;
+        /* 아이템들을 센터로 */
+        align-items: center;
+        /* 아이템 이름들 센터로 */
+        
       }
 
       /* LOGO */
       header .inner .logo {
         color: white;
         font-size: 30px;
-        position: relative;
-         top: 30px;
+        position:absolute;
+        left: 50px;
       }
 
       header .inner .menu {
-        display: flex;    
-        justify-content: center;
+        display:flex;
+        /* flex= 가로정렬 */
       }
 
       header .inner .menu li {
-        margin: 10px;
+        margin:20px;
         font-weight: bold;
-
-      }
-
-      @media screen and (max-width:768px){
-          header .inner .menu{
-          display : block;
-          justify-content: center;
-          margin-top: 60px;
-          background-color: rgb(199, 230, 242);         
-        }
-
-        div{
-          text-align: center;
-        }
-
+        cursor:pointer;
       }
 
       /* 미디어 쿼리 작성 768px 이하일 때  */
-    </style>
-    
 
+      @media screen and (max-width: 768px){
+        heder{
+            height:var(--nav-height-lg);
+        }
+
+
+        header .inner .menu {
+            display: block;
+            text-align: center;
+            background-color: aliceblue;
+        }
+
+        header .inner {    
+            display: block;
+
+        }
+        header .inner .logo {
+            position: static;
+            height:100%;
+            line-height: var(--nav-height-lg);
+            text-align: center; 
+            /* 아이콘 그림이여도 텍스트라고 생각하면 가운데 정렬 */
+
+        }
+        header .inner .menu li {
+            margin: 0 5px;
+
+        }
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -95,21 +110,5 @@
         </ul>
       </div>
     </header>
-    <script>
-
-      $('i').click(function(){
-        $( '.menu' ).toggle(  );
-
-      });
-
-    </script>
-  
-
   </body>
 </html>
-
-
-
-
-
-
