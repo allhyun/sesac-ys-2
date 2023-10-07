@@ -7,17 +7,29 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@700&family=Gasoek+One&display=swap" rel="stylesheet">
     <style>
-        .title{
+      @import url('https://fonts.googleapis.com/css2?family=Dongle:wght@700&display=swap');
+      @font-face {
+    font-family: 'KCC-Ganpan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+    </style>
+    <style>
+        header{
+           display:flex;
+           justify-content: center;
             text-align: center;
-            background-color: blanchedalmond;
-            font-family: 'Nanum Pen Script', cursive;
+            background-color: orange;
+            font-family: 'Gasoek One', sans-serif;
         }
 
         body{
-            background-color: azure;
+            background-color: beige;
         }
         
         .hand{
@@ -26,6 +38,12 @@
             justify-content: center;
             animation: hello infinite 1.5s linear;
             
+        }
+
+        .chunsik{
+            /* position:absolute; */
+            display:flex;
+            justify-content: center;            
         }
 
         @keyframes hello{
@@ -65,24 +83,53 @@
 
         .accordion-header > button {
             font-weight: 900;
-            font-style: italic ;
+            font-size: larger;
+            font-family:'KCC-Ganpan';
+            background-color: rgb(245, 229, 190);
         }
 
         .accordion-body{
             font-style: italic ;
-            font-size: smaller;
+            font-family: 'KCC-Ganpan';
+            
         }
 
         .btnss{
             display:flex;
             justify-content: space-around;
+            font-family: 'Dongle', sans-serif;
+            font-size: large;
+        }
+        .btn-success{
+          background-color: coral;
         }
 
         @media screen and (max-width: 768px){
-            .title{
+            header{
                 background-color: green;
             }
+            .kakaofr{
+              display:flex;
+              flex-direction: column;
+            }
+            body{
+              background-color: rgb(217, 241, 180)
+            }
+
         }
+        header{
+          display: ;
+        }
+
+        .kakaofr{
+          display: flex;
+        }
+        .card-img-top{
+          width: 288px;
+          height:288px;
+        }
+
+        
        
 
         
@@ -95,16 +142,21 @@
 
 
   <body>
-    
-    <h1 class="title">반가워요!</h1>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  
-    <a class="hand"><img src="손.png" alt="손" tltle="hand" width= "50" height="50"></a>
-    <div class="btnss">
-      <button type="button" class="btn btn-lg btn-danger" data-bs-toggle="popover" data-bs-title="안녕안녕" data-bs-content="같이 손 흔들어줄래??">안녕?</button>
+    <header>
+       <h1 class="title">춘식이를 소개합니다!</h1>
+       <a class="hand"><img src="손.png" alt="손" tltle="hand" width= "50" height="50"></a>
+       
+    </header>
 
-      <button type="button" class="btn btn-success" onclick ="window.open('https://www.naver.com/')">네이버로 이동</button>
+    <a class="chunsik"><img src="춘식이.gif" alt="춘식이" tltle="chunsik" width= "200" height="200"></a>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
+  
+    <!-- <a class="hand"><img src="손.png" alt="손" tltle="hand" width= "50" height="50"></a> -->
+    <div class="btnss">
+      <!-- <button type="button" class="btn btn-lg btn-danger" data-bs-toggle="popover" data-bs-title="안녕안녕" data-bs-content="같이 손 흔들어줄래??">안녕?</button> -->
+      <button type="button" class="btn btn-success" onclick ="window.open('https://namu.wiki/w/%EC%B6%98%EC%8B%9D')">춘식이가 궁금해?</button>
+      <button type="button" class="btn btn-success" onclick ="window.open('https://i.namu.wiki/i/pxQccjXDO5zs0T4IlLuRFSmwcd5bWYsdEl4Uiu8o-SUmU8RU7Ua-eSzrOgs4BlAOfmgAvzl-iAFfNszvmhngnO1LFk1dAVneDEQh-9aGOwkDTSV3iFg4fJxoTv_yxWZbfr36MksDaN6Ohxd8znjCQQ.webp')">춘식이 주인</button>
+      <button type="button" class="btn btn-success" onclick ="window.open('https://store.kakaofriends.com/profile/17?tab=products')">춘식이를 구매해봐</button>
 
     </div>
     <br>
@@ -118,7 +170,7 @@
             </button>
           </h2>
           <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">이다현입니다.</div>
+            <div class="accordion-body">춘식이</div>
           </div>
         </div>
         <div class="accordion-item">
@@ -128,17 +180,17 @@
             </button>
           </h2>
           <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">1995년 1월 10일</div>
+            <div class="accordion-body">라이언과 만난 2020년 7월 21일</div>
           </div>
         </div>
         <div class="accordion-item">
           <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse3" aria-expanded="false" aria-controls="flush-collapse3">
-              취미는?
+              성별은?
             </button>
           </h2>
           <div id="flush-collapse3" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">운동</div>
+            <div class="accordion-body">암컷!</div>
           </div>
         </div>
         <div class="accordion-item">
@@ -148,7 +200,7 @@
               </button>
             </h2>
             <div id="flush-collapse4" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body">여행</div>
+              <div class="accordion-body">고구마</div>
             </div>
           </div>
       </div>
@@ -167,11 +219,51 @@
       <button type="button" class="btn btn-success" onclick ="window.open('https://www.naver.com/')">네이버로 이동</button>
       <p></p> -->
 
-      <div class="p-3 mb-2 bg-info-subtle text-emphasis-info">너무 어려워요</div>
+      <!-- <div class="p-3 mb-2 bg-info-subtle text-emphasis-info">너무 어려워요</div>
 
       <div class="p-3 mb-2 bg-dark-subtle text-emphasis-dark">제대로 하는게 맞는지 모르겠는데</div>
 
-      <div class="shadow p-3 mb-5 bg-body-tertiary rounded">이게 맞나...</div>
+      <div class="shadow p-3 mb-5 bg-body-tertiary rounded">이게 맞나...</div> -->
+
+
+      <a class="icon-link icon-link-hover" onclick ="window.open('https://store.kakaofriends.com/home')">
+        다른친구들이 궁금해?
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+        </svg>
+      </a>
+
+      <div class="kakaofr">
+
+
+       <div class="card" style="width: 18rem;">
+        <img src="라이언.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">라이언</h5>
+          <p class="card-text">곰같지만 갈퀴없는 사자인 라이언</p>
+          <a onclick ="window.open('https://namu.wiki/w/%EB%9D%BC%EC%9D%B4%EC%96%B8(%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%94%84%EB%A0%8C%EC%A6%88)')" class="btn btn-primary">라이언</a>
+        </div>
+       </div>
+
+       <div class="card" style="width: 18rem;">
+        <img src="어피치.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">어피치</h5>
+          <p class="card-text">복숭아나무에서 태어난 유전자변이 어피치</p>
+          <a href="https://namu.wiki/w/%EC%96%B4%ED%94%BC%EC%B9%98" target='_blank' class="btn btn-primary">어피치</a>
+        </div>
+       </div>
+
+        <div class="card" style="width: 18rem;">
+         <img src="카카오프렌즈.webp" class="card-img-top" alt="...">
+         <div class="card-body">
+          <h5 class="card-title">다른 카카오프렌즈</h5>
+          <p class="card-text">다른 많은 카카오프렌즈들이 궁금하면 놀러와!</p>
+          <a href="https://store.kakaofriends.com/home" target='_blank' class="btn btn-primary">카카오프렌즈</a>
+         </div>
+      </div>
+
+    </div>
 
       
 
