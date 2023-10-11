@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jQuery</title>
+    <title>jQuery해설</title>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <style>
         .container{
@@ -73,23 +73,23 @@
             span.css("color", "blue");
             // $("#span1").css("color", "blue");
 
-            // js 코드로 한다면?
+            // js 코드로 한다면
             // const span = document.getElementById("span1");
             // span.style = "font-size: 30px; color: blue;" 
         }
 
         function useAttr() {
-            $("#input").val("");
+            //$("#input").val("");
             $("#input").attr("placeholder", "이름을 입력하세요.");
             // js : setAttributes()
         }
 
         function useText() {
             // innerText
-            // $("#span1").text("hellooooooo");
+            $("#span1").text("hellooooooo");
 
             // innerHTML
-            $("#span1").html("hello <b>lily</b>");
+            //$("#span1").html("hello <b>lily</b>");
         }
 
         // 자주쓰임!!!!
@@ -118,7 +118,7 @@
             // const container = document.querySelector(".container");
             // container.innerHTML = "";
             // .container의 내용을 비우겠다.
-            $(".container").empty();
+           // $(".container").empty();
         }
 
         function useParent() {
