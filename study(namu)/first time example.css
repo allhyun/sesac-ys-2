@@ -1,0 +1,45 @@
+.box{
+    width:1000px;
+    height:1000px;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.box1{
+    background-color: rgb(244, 201, 208);
+    width: 500px;
+    height: 100px;
+}
+
+.box2{
+    background-color: rgb(233, 204, 151);
+    width: 500px;
+    height: 100px;
+}
+
+.box3{
+    background-color: rgb(203, 251, 203);
+    width: 500px;
+    height: 100px;
+}
+
+.box4{
+    background-color: rgb(196, 232, 243);
+    width: 500px;
+    height: 100px;
+}
+
+.text{
+    width: 1000px;
+    height: 1000px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+ p{
+text-align: center;
+}

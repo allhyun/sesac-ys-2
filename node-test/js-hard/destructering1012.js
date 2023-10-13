@@ -49,7 +49,7 @@ const arr2 = ["a", "b", "c", "d", "e"];
 const arr3 =[...arr1, ...arr2];
 console.log("arr3", arr3);
 
-//...[1,2,3,4,5] => 1,2,3,4,5s
+//...[1,2,3,4,5] => 1,2,3,4,5
 const hello = [..."hello"]
 //hello = ["h","e","l","l","o"]
 console.log("hello", hello);
