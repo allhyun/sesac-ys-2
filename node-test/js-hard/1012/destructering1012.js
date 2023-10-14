@@ -49,7 +49,31 @@ const arr2 = ["a", "b", "c", "d", "e"];
 const arr3 =[...arr1, ...arr2];
 console.log("arr3", arr3);
 
-//...[1,2,3,4,5] => 1,2,3,4,5s
+//...[1,2,3,4,5] => 1,2,3,4,5
 const hello = [..."hello"]
 //hello = ["h","e","l","l","o"]
 console.log("hello", hello);
+
+
+const obj2 = {
+    name:"dada",
+    gender:"여",
+    age: 30,
+};
+
+const obj3 = {
+...obj2,
+test :"test" //추가하고싶은 내용 적으면 됨~
+};
+
+console.log("obj3", obj3);
+
+const value = [10, 20, 30];
+function get(a, ...rest){
+    console.log("a", a);//10
+    console.log("rest", rest); //...rest를 사용할경우 남은 것들을 배열로 묶어서 보여주겟다[20, 30]
+};
+
+get(...values);
+// ...[10, 20, 30] => 10,20,30
+//get(10, 20, 30);
