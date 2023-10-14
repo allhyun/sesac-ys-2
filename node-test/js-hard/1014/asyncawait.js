@@ -36,7 +36,43 @@ async function add(n1, n2) {
     console.log("2:",y);
     const z =await sub(y); // z=13
     console.log("3:",z);
+
   }
+
+  exec();
+
+
+  function goMart(){
+    console.log('마트에 가서 어떤 음료를 살지 고민한다.');
+
+}
+let product;
+let price;
+
+function pickDrink(){
+    return new Promise(function(resolve,reject){
+        setTimeout(function(){
+            console.log('고민 끝!!');
+            product = '제로콜라';
+            price =2000;
+            resolve();
+        }, 3000);
+    });
+    }
+    
+function pay(product, price){
+    console.log(`상품명: ${product},가격: ${price}`);
+}
+
+async function exec(){
+    goMart();
+    pickDrink();
+    pay(product,price);
+}
+exec();
+
+
+
 
   //---테스트코드
   
