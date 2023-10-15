@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="first time example2.css">
+
+    <title>예제 2</title>
+</head>
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
+<body>
+<h1>7. 메인메뉴 고정 및 소메뉴 마우스 올렸을때 나타나게 만들기</h1>
+<header>
+ <div class = "Bmenu">대메뉴1
+   <ul class="menu1"> 
+     <li>소메뉴1-1</li>
+     <li>소메뉴1-2</li>
+     <li>소메뉴1-3</li>
+    </ul>
+ </div>
+ 
+ <div class = "Bmenu2">대메뉴2
+    <ul class="menu2"> 
+      <li>소메뉴2-1</li>
+      <li>소메뉴2-2</li>
+      <li>소메뉴2-3</li>
+    </ul>
+ </div>
+ 
+ <div class = "Bmenu3">대메뉴3 
+    <ul class="menu3"> 
+     <li>소메뉴3-1</li>
+     <li>소메뉴3-2</li>
+     <li>소메뉴3-3</li>
+    </ul>
+ </div>
+  
+ <div class = "Bmenu4">대메뉴4
+    <ul class="menu4"> 
+     <li>소메뉴4-1</li>
+     <li>소메뉴4-2</li>
+     <li>소메뉴4-3</li>
+    </ul>
+ </div>
+ 
+
+</header>
+<script>
+
+    $(`.Bmenu`).click(function(){
+      $( '.menu1' ).toggle(  );
+
+    });
+    $('.Bmenu2').click(function(){
+      $( '.menu2' ).toggle(  );
+
+    });
+    $('.Bmenu3').click(function(){
+      $( '.menu3' ).toggle(  );
+
+    });
+    $('.Bmenu4').click(function(){
+      $( '.menu4' ).toggle(  );
+
+    });
+</script>
+</body>
+</html>

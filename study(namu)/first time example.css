@@ -55,6 +55,47 @@
     align-items: center;
     }
 
+/* 3번 */
+.container header{
+    background-color: pink;
+    height: 100px;
+    width:700px;
+
+}
+.container nav{
+    background-color: rgb(216, 196, 235);
+    height: 30px;
+    width:700px;
+}
+.container main{
+    display:flex;
+    height:500px;
+}
+aside{
+    background-color: aqua;
+    width:200px;
+}
+article{
+    background-color: rgb(213, 213, 175);
+    width:500px;
+}
+
+    /* 4번 */
+
+    form{
+        display:flex;
+        flex-direction: column;
+
+    }
+    form label{
+        display: flex;
+        margin: 10px;
+    }
+    form label div{ 
+        width :150px;
+        background-color: aquamarine;
+    }
+/* 5번 */
 .egg{ 
     background-color: grey;
     width: 1000px;
@@ -66,3 +107,4 @@
     background-color: orange;
     height: 100px;
 }
+
