@@ -108,3 +108,66 @@ article{
     height: 100px;
 }
 
+/* 6번 */
+.ccc{
+    display:flex;
+    width: 500px;
+    height: 800px;
+    text-align: center; 
+    display: flex;
+    flex-flow: wrap ;
+    justify-content: center;
+}
+.ccc div{ 
+    margin: 10px;
+}
+
+.img1{
+    background-color: blue;
+    width: 150px;
+    height: 150px;
+    }
+
+.img2{
+    background-color: aquamarine;
+    width: 150px;
+    height: 150px;
+}
+.img3{
+    background-color: blueviolet;
+    width: 150px;
+    height: 150px;
+}
+.img4{
+    background-color: red;
+    width: 150px;
+    height: 150px;
+}
+.img1 footer{
+    width: 150px;
+    height: 30px;
+    background-color: rgb(44, 144, 95);
+    position:relative;
+    top:67px;
+}
+.img2 footer{
+    width: 150px;
+    height: 30px;
+    background-color: rgb(40, 200, 45);
+    position:relative;
+    top:67px;
+}
+.img3 footer{
+    width: 150px;
+    height: 30px;
+    background-color: rgb(228, 45, 200);
+    position:relative;
+    top:67px;
+}
+.img4 footer{
+    width: 150px;
+    height: 30px;
+    background-color: yellow;
+    position:relative;
+    top:67px;
+}
