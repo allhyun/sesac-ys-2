@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <!------------- get 요청----------------------- -->
+    <h1>로그인 get 요청</h1>
+    <!-- form 전송은 클라이언트가 서버로 데이터를 보내는 방법 중 하나. -->
+    <!-- action : 요청을 보낼 주소(제 서버에 보낸다라는 가정 하에 도메인을 뗀 나머지 주소) -->
+    <!-- ex) localhost:8000/get/test 이라는 곳으로 보내고 싶다면 action="/get/test" -->
+    <!-- method : 어떤 방식의 요청을 사용할 지 (get or post) -->
+    <!-- target 은 로그인 폼 제출하면 새창으로 띄울 지 그 창에서 변경창으로 반드는지 해주게 만들어주는 속성 -->
+    <form action="/get" target="_blank" method="get" name="login">
+      <fieldset>
+      <input type="text" name="id" />
+      <input type="password" name="pw" />
+    </fieldset>  
+      <input type="radio" name="gedner" value="남자" id="man"/> <label for ="man">남자</label>
+      <input type="radio" name="gedner" value="여자" id="woman"/><label for ="woman">여자</label>
+      <!-- 글자를 클릭해도 라디오버튼 활성화 되게하는법은 label 태그에 for 명과 input태그 에 id 명을 동일하게 설정하면된다. -->
+      <!-- button type submit인 경우, 버튼을 감싸고 있는 form 태그의 정보에 맞게 폼을 제출함.  -->
+      <button type="submit">제출</button>
+    </form>
+
+    <script>
+        console.dir(document.forms["login"]);
+        // console.log(document.forms["login"]);
+    </script>
+
+    <h1>회원가입get</h1>
+    <form>
+      <input type="text" name="id"  />
+      <input type="password" name="pw" />
+      <input type="text" name="name" />
+      <input type="text" name="email" />
+    </form>
+
+    <h1>회원가입post</h1>
+    <form action="/post/ver2" method ="post">
+      <input type="text" name="id"  />
+      <input type="password" name="pw" />
+      <input type="text" name="name" />
+      <input type="text" name="email" />
+      <button type="submit">제출</button>
+    </form>
+
+    
+  </body>
+
+</html>

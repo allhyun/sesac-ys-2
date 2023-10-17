@@ -25,7 +25,7 @@
 
 
 
-//해결코드
+//해결코드(콜백함수)
 // function goMart(){
 //     console.log('마트에 가서 어떤 음료를 살지 고민한다.');
 
@@ -74,7 +74,15 @@ function pay(product, price){
     console.log(`상품명: ${product},가격: ${price}`);
 }
 
-goMart();
-pickDrink().then(() => {
- pay(product,price);}
-);
+// goMart();
+// pickDrink().then(() => {
+//  pay(product,price);}
+// );
+
+async function exec() {
+    goMart();
+ pickDrink();
+ pay(product,price);
+}
+exec();
+
