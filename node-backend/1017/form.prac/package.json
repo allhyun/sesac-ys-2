@@ -1,16 +1,14 @@
 {
-  "name": "formp",
+  "name": "form.prac",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "",
+  "main": "formp.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ejs": "^3.1.9",
-    "express": "^4.18.2",
-    "install": "^0.13.0"
-  },
-  "description": ""
+    "express": "^4.18.2"
+  }
 }
