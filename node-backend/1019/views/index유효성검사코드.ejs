@@ -22,7 +22,11 @@
         <button type="button" onclick="ajaxGet()">ajax get 제출</button>
         <button type="button" onclick="ajaxPost()">ajax post 제출</button>
         <button type="button" onclick="axiosGet()">axio get 제출</button>
-        <button type="button" onclick="axiosPost()">axio post 제출</button>       
+        <button type="button" onclick="axiosPost()">axio post 제출</button>
+        <button type="button" onclick="fetchGet()">fetch get 제출</button>
+        <button type="button" onclick="fetchPost()">fetch post 제출</button>       
+       
+
 
         <!-- 아래 두 줄은 일반(동기) 폼을 전송할 떄 사용되는 type -->
         <!-- <input trpe="submit"> = <button type="submit" -->
@@ -182,7 +186,7 @@
             const res =await axios({
                 method:"POST",
                 url:"/axios",
-                data: data,
+                data: data,//post일 경우 서버에 데이터를 보낼때 data 키에 보냄
             })
             console.log("res",res)
             console.log("res",res.data)  
@@ -190,6 +194,74 @@
 
         }
         
+        async function fetchGet(){
+            const data =getData();
+            if(!data) return; 
+            //fetch(url, option객체) 기본구조
+            //url -> action
+            //option객체에 method가 있음.
+            //fetch는 method 기본값
+            //fetch는 get요청시 데이터를 query로 만들어서 url과 함께 전송한다
+            // const urlQuery =`id=${data.id}&name=${data.name}&pw=${data.pw}`
+            const urlQuery = new URLSearchParams(data).toString();
+
+            //---------방법1 (then 체이닝)
+            fetch(`/fetch?${urlQuery}`)
+            .then((res)=>{
+                console.log("원본",res)
+                //json()메소드를 이용해서 파싱해야함
+                //json은 promise기반
+                // const data =res.json();
+                // console.log(data)//promise pending(undefined)(문제발생)
+                return res.json()
+            })
+             .then((res)=>{
+                //위에서 파싱해서 return하고 있기 때문에,
+                //이 함수의 res는 서버에서 여러분들이 응답한 객체
+                console.log("파싱",res);
+            })
+
+            //----------------방법2 (async await 반만 사용)
+            fetch(`/fetch?${urlQuery}`).then(async(res)=>{
+                console.log("원본",res);
+                console.log("파싱",await res.json());
+                //응답을 파싱해야함. 
+                //.json() , .text() ..
+            })
+
+            //------------방법3(async await)
+            
+            const oriRes = await fetch(`/fetch?${urlQuery}`)
+            const res= await oriRes.json()
+            console.log(res)
+            
+            
+                      
+        }
+        function fetchPost(){
+            const data =getData()
+            if(!data) retutn;
+
+            //원래는 content-type 기본값 사용 : application/x-www-form-urlencoded
+            //하지만 fetch post 요청 시에 기본값을 사용했을 때 동작을 안함
+            //content-type을 application/json 형태로 변경해야한다.
+            fetch("/fetch",{
+                method:"POST",
+                headers:{
+                    "Content-Type": "application/json"
+                    //코드작성시에 기호들어가면 "" 이나''로 묶어서 작성
+                    },
+                body:JSON.stringify(data) //data 객체를(js) json형태로 변경하는 함수이다
+                //JSON. stringfy()
+
+            }).then((res)=>{
+                return res.json()
+            }).then((res)=>{
+                console.log(res)
+                $("#result").html(`fetch post 요청 성공 ${res.name} 환영합니다`)
+            })
+            
+        }
     </script>
 
     <!-- 위의 코드는 submit을 사용하지않아서 유효성이 검증되지않았기에

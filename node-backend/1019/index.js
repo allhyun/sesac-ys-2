@@ -38,7 +38,23 @@ app.post("/axios",function(req,res){
         ...req.body,
         msg:"반가워요"
     }
+    //{
+    //     id:,
+    //     name:,
+    //     pw:,
+    //     msg:
+    // }
     res.send(data)
+    console.log(req.body);
+});
+
+app.get("/fetch",function(req,res){
+    res.send(req.query)
+    console.log(req.query);
+});
+
+app.post("/fetch",function(req,res){
+    res.send(req.body)
     console.log(req.body);
 });
 

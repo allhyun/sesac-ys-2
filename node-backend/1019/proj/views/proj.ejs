@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project</title>
+    <script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h2>axios get 회원가입 </h2>
+    <form name="join">
+        이름<input type="text" name="name" placeholder="이름" value="name" required >
+        <fieldset>
+            <legend>성별</legend>
+         <input type="radio" name="gender"  id="man" value="남자">남자 
+         <input type="radio" name="gender" id="woman"value="여자">여자 
+        </fieldset>
+        <fieldset>
+            <legend>생년월일</legend>
+         <select id="year" name="year">
+            <% for( let i = 1900; i<= 2023; i++){ %>
+                <option value="<%= i %>"><%= i %></option>
+             <% } %>
+         </select> 년
+         <select id="month" name="month">
+            <% for( let i = 1; i<= 12; i++){ %>
+                <option value="<%= i %>"><%= i %></option>
+             <% } %>
+         </select> 월
+         <select id="day" name="day">
+            <% for( let i = 1; i<= 31; i++){ %>
+                <option value="<%= i %>"><%= i %></option>
+             <% } %>
+         </select> 일
+        </fieldset>
+        <fieldset>
+            <legend>관심사</legend>
+         <input type="checkbox" name="interest" value="여행" id="trip"> 여행
+         <input type="checkbox" name="interest" value="패션" id="trip"> 패션
+         <input type="checkbox" name="interest" value="음식" id="trip"> 음식
+        </fieldset>
+
+
+        <button type="button" onclick="axiosGet()">회원가입</button>
+    </form>
+
+    <script>
+        function axiosGet(){
+            const form =document.forms["join"];
+            const interest =[];
+            for(let input of form.interest){
+                if(input.checked) interest.push(input.value);
+            }
+
+
+            const data = {
+                name : form.name.value,
+                gender : form.gender.value,
+                birth: `${form.year.value} "-" ${form.month.value} "-" ${form.day.value}`,
+                interest: interest
+                            
+            }
+            axios({
+                method:"GET",
+                url:"/axios",
+                params : data,
+            }).then((res)=>{
+                console.log(res)
+                console.log(res.data)
+            })
+        }
+
+        
+
+    
+    </script>
+</body>
+</html>
