@@ -59,6 +59,12 @@ app.post("/fetch",function(req,res){
 });
 
 
+// app.post("/~~~",function(req,res){
+//     const id ="dahyun";
+//     const pw ="0110";
+//     //req.body와 id.pw를 비교하는 코드 작성
+//     //
+
 
 app.listen(PORT, function () {
     console.log(`Sever Open: ${PORT}`);
