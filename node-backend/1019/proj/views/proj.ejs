@@ -47,14 +47,17 @@
 
         <button type="button" onclick="axiosGet()">회원가입</button>
     </form>
+    <div class="result"> </div>
 
     <script>
         function axiosGet(){
             const form =document.forms["join"];
-            const interest =[];
+            const interest =[]; //빈배열
             for(let input of form.interest){
-                if(input.checked) interest.push(input.value);
+                //input의 타입이 radio이거나 checkbox인 경우 input의 속성으로 checked라는게 존재
+                if(input.checked) interest.push(input.value); //interest에 push한다!
             }
+            // 체크박스는 값을 가져와지지않음...! 그래서 for문이용해서 가져와야함
 
 
             const data = {
@@ -69,6 +72,10 @@
                 url:"/axios",
                 params : data,
             }).then((res)=>{
+                // const { name } =res.data
+                // document.querySelector(".result").innerHTML = ${}님  환영합니다
+
+
                 console.log(res)
                 console.log(res.data)
             })

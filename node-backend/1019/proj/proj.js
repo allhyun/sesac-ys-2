@@ -15,6 +15,8 @@ app.get("/axios",function(req,res){
     res.send(req.query)
     console.log(req.query);
 });
+
+
 app.listen(PORT, function () {
     console.log(`Sever Open: ${PORT}`);
   });
