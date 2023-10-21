@@ -92,6 +92,14 @@ app.post("/upload/fileds",uploadtDetail.fields([{name:"userfile1"},{name:"userfi
     res.send("파일 여러개 ver2 업로드");
 })
 
+
+app.post("/upload/dynamic",uploadtDetail.single("userfile"),
+     function(req,res){
+    res.send({src:req.file.path})
+})
+
+
+
 app.listen(PORT, function () {
     console.log(`Sever Open: ${PORT}`);
   });

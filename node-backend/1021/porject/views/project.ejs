@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <form action="/upload" method="post" name="join" enctype="multipart/form-data">
@@ -19,19 +19,56 @@
         <input type ="file" name="userfile">
 
         <br>
-        <button type="submit" onclick="Join()">회원가입</button>
+        <button type="submit" >회원가입</button>
     </form>
+
+    <h2>동적폼</h2>
+    <form name="dynamic">
+        <input type="text" name="id" placeholder="아이디" value="dah">
+        <br>
+        <input type="password" name="pw" placeholder="비밀번호" value="1234">
+        <br>
+        <input type="text" name="name" placeholder="이름" value="현">
+        <br>
+        <input type="text" name="age" placeholder="나이" value="100">
+        <br>
+        <input type ="file" name="userfile">
+
+        <br>
+        <button type="button" onclick="Join()">회원가입</button>
+    </form>
+    <div id="dynamic-result"></div>
     <script>
         function Join(){
-            const form =document.forms["join"];
+            const form =document.forms["dynamic"];
+            const formData = new FormData();
+            formData.append("id",form.id.value);
+            formData.append("pw",form.pw.value);
+            formData.append("name",form.name.value);
+            formData.append("age",form.age.value);
+            formData.append("userfile",form.userfile.files[0]);
+
+
+            axios({
+                method:"post",
+                url:"/upload/dynamic",
+                data:formData,
+                Headers:{
+                    "content-type": "multipart/form-data"
+                }
+
+            }).then((res)=>{
+                console.log(res.data)
+                const result = document.getElementById("dynamic-result")
+                result.innerHTML = `<img src="/${res.data.src}" width="150">`
             
-            const data = {
-                id : form.id.value,
-                비밀번호 : form.pw.value,
-                나이 : form.age.value,
+                $(".dynamic-result").html(`<h2>${res.data.name}님 환영합니다.<h2>
+                    <p>번호${res.data.number}</p>
+                    <p>나이${res.data.age}</p>`)
+            })
             }
-            console.log(res.data)
-            }
+
+
 
     </script>
 </body>

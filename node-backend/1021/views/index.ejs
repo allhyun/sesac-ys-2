@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>파일 업로드</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <h1>일반폼 전송을 이용해서 파일 업로드 하기</h1>
@@ -50,6 +51,72 @@
      <button type="submit" >업로드</button>
    </form>
 
+   <h2>동적 폼 전송(axios)을 이용한 파일 업로드</h2>
+
+   <!-- 동적폼전송은 모두 script를 이용해서 보낸다. -->
+   <form name="dynamic-upload">
+    <input type ="file" name="userfile1" >
+     <br>
+     <input type="text" name="title1">
+     <br>
+     <button type="button" onclick="dynamicUpload()" >업로드</button>
+   </form>
+
+
+
 </body>
+<div id="dynamic-upload-result"></div>
+
     <!-- fetch를 이용한 동적 폼 전송의 content-type 지정 -->
+
+    <script>
+        function dynamicUpload(){
+            const form = document.forms["dynamic-upload"];
+
+            //파일을 객체에 담기위한코드
+            const formData = new FormData();
+            formData.append("title",form.title1.value);
+            //type이 file인 input태그를 선택해서 files 접근
+            console.log("value",form.userfile1.value) //value로 처리할 수 없다. 이미지파일이 안불러와지기때문에
+            console.log("files",form.userfile1.files) //files라는 속성으로 불러와서 파일을 담아오는데 배열로 가져온다.
+            //그래서 배열을 이용해서 파일을 가져오기!
+            //formData객체의 append 메소드는 데이터를 추가할 때 사용
+            formData.append("userfile",form.userfile1.files[0]);
+
+
+            //아래방식은 이미지 데이터를 정상적으로 처리할 수 없음
+            //  const data = {
+            //     id:form.userfile1.value,
+            //     file:form.title1.value,
+            // }
+
+        //     axios({
+        //     method: "post",
+        //     url: "/upload/dynamic",
+        //     data: formData,
+        //     headers: {
+        //         "Content-type": "multipart/form-data"
+        //       }
+        // }).then((res) => {
+        //   console.log(res.data)
+        //   const result = document.getElementById("dynamic-upload-result")
+        //   result.innerHTML = `<img src="/${res.data.src}" width="150"/>`
+        // })
+
+
+            axios({
+                method:"POST",
+                url:"/upload/dynamic",
+                data:formData,
+                headers:{
+                    "content-type": "multipart/form-data"
+                }
+            }).then((res)=>{
+                console.log(res.data)
+
+                const result =document.getElementById("dynamic-upload-result")
+                result.innerHTML = `<img src="/${res.data.src}" width="150">`
+            })
+        }
+    </script>
 </html>

@@ -42,16 +42,27 @@ app.get("/",function(req,res){
 });
 
 
-app.post("/upload", uploadtDetail.single("userfile"), function(req, res){
-    console.log("file",req.file);
-    console.log("body",req.body);
-    res.render("result",{
-        src: req.file.path,
+// app.post("/upload", uploadtDetail.single("userfile"), function(req, res){
+//     console.log("file",req.file);
+//     console.log("body",req.body);
+//     res.render("result",{
+//         src: req.file.path,
+//         id: req.body.id,
+//         pw: req.body.pw,
+//         name: req.body.name,
+//         age:req.body.age
+//     });
+// })
+
+app.post("/upload/dynamic", uploadtDetail.single("userfile"), 
+    function(req,res){
+    res.send({
+        src:req.file.path,
         id: req.body.id,
         pw: req.body.pw,
         name: req.body.name,
         age:req.body.age
-    });
+    })
 })
 
 
