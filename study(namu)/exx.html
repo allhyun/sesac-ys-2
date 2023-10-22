@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>배송주소</h2>
+        <hr>
+        <table>
+            <tr>
+                <th>배송방법</th>
+                <td><input type="radio" value="일반택배" name="delivery">일반택배</td>
+                <td><input type="radio" value="해외배송" name="delivery">해외배송</td>
+                <td><input type="radio" value="안심택배" name="delivery">안심택배</td>
+            </tr>
+            
+            <tr>
+                <td></td>
+                
+                <td><input type="radio" value="편의점픽업" name="delivery">편의점픽업</td>
+                <td><input type="radio" value="중고매장 픽업" name="delivery">중고매장 픽업</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="3">편의점픽업, 해외배송, 업체배송의 경우 총알하루 배송이 적용되지 않습니다.</td>
+            </tr>
+        </table>
+        <hr>
+
+        <table>
+            <tr>
+                <th>배송지</th>
+                <td><input type="radio" value="최근배송지" name="address">최근배송지 <input type="button" value="더보기"></td>
+                <td><input type="radio" value="주소록" name="address">주소록</td>
+                <td><input type="radio" value="회원정보동일" name="address">회원정보동일</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="radio" value="새로입력" name="address">새로입력</td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <th>이름</th>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <th>배송주소</th>
+                <td><input type="text" name="adressnum"><input type="button" value="주소찾기"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>도로명 주소<input type="text" name="ad_road" size="30"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>지번 주소<input type="text" name="ad_old" size="30"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    주소/우편번호체계가 새롭게 변경되었습니다. <br>
+                    정확하고 빠른 배송을 위해 입력된 주소를 확인하시고 업데이트 해주시기 바랍니다.
+                </td>
+            </tr>
+        </table>
+        
+        <table>
+            <tr>
+                <th>핸드폰</th>
+                <td>
+                    <select name="phone1">
+                        <option selected>선택</option>
+                        <!-- selected 기본값 설정 -->
+                        <option>010</option>
+                        <option>011</option>
+                        <option>017</option>
+                    </select>
+                    - <input type="text" name="phone2" size="4">
+                    - <input type="text" name="phone3" size="4">
+                    연락처는 하나만 입력하셔도 결제가 가능합니다.
+                </td>
+            </tr>
+            <tr>
+                <th>일반전화</th>
+                <td>
+                    <select name="hometel">
+                        <option>051</option>
+                        <option>02</option>
+                        <option>031</option>
+                    </select>
+                    - <input type="text" name="hometel2" size="4">
+                    - <input type="text" name="hometel3" size="4">
+                </td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <h3>주문고객</h3>
+
+        <table>
+            <tr>
+                <th>이름</th>
+                <td><input type="text" name="ordername"></td>
+            </tr>
+            <tr>
+                <th>핸드폰</th>
+                <td>
+                    <select name="orderphone">
+                        <option>010</option>
+                        <option>011</option>
+                        <option>017</option>
+                    </select>
+                    - <input type="text" name="orderphone2" size="4">
+                    - <input type="text" name="orderphone3" size="4">
+                    연락처는 하나만 입력하셔도 결재가 가능합니다.
+                </td>
+            </tr>
+            <hr>
+            <tr>
+                <th>일반전화</th>
+                <td>
+                    <select name="ordertel">
+                        <option selected>선택</option>
+                        <option>02</option>
+                        <option>031</option>
+                        <option>051</option>
+                    </select>
+                    - <input type="text" name="ordertel2" size="4">
+                    - <input type="text" name="ordertel3" size="4">
+                </td>
+            </tr>
+            <tr>
+                <th>이메일</th>
+                <td><input type="email" size="20"></td>
+            </tr>
+        </table>
+
+</body>
+</html>
