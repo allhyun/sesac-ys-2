@@ -21,9 +21,11 @@ exports.post_signup = async(req, res) => {
 
 }
 
+
 exports.signin = (req, res) => {
   res.render('signin')
 }
+
 
 
 exports.post_signin = (req, res) => {
