@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="form-info" action="" method="POST">
+        <div>
+          
+                ID: <input type="text" name="id">
+            
+        </div>
+        <div>
+          
+                 pw: <input type="password" name="pw">
+        
+        </div>
+        <br>
+        <button type="submit" onclick="login()">로그인</button>
+
+    </form>
+
+    <script>
+        function login() {
+
+
+const form = document.forms["form-login"];
+const data = {
+  userid: form.id.value,
+  pw: form.pw.value
+};
+// if (!form.checkValidity()) {
+//   form.reportValidity();
+//   console.log("reportValidity");
+
+//   return false;
+// }
+
+axios({
+  method: 'post',
+  url: '/user/signin',
+  data: data
+}).then((res) => {
+  if (res.data.result == true) {
+    alert("로그인 성공");
+    //로그인 성공시 회원정보페이지로 이동해서 정보가 유지될?
+
+    var formInfo = document.forms["form-info"];
+    formInfo.id.value = res.data.id;
+    formInfo.submit();
+  } else {
+    alert("로그인 실패");
+    // form.reset();
+  }
+});
+}
+
+    </script>
+</body>
+</html>
