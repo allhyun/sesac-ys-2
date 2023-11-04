@@ -1,5 +1,5 @@
 const { User } = require('../model')
-
+//모델파일의 index파일의 db의 객체 user을 불러온다
 exports.index = (req, res) => {
   res.render('user')
 }
@@ -11,6 +11,9 @@ exports.post_signup = (req, res) => {
   User.create(req.body).then((result) => {
     console.log('User create:', result)
     res.send({ result: true })
+  }).catch((err)=>{
+    console.log("user creste err:",err)
+    res.send({result:false})
   })
 
   // User.post_signup(req.body, function () {
@@ -22,7 +25,7 @@ exports.signin = (req, res) => {
   res.render('signin')
 }
 exports.post_signin = (req, res) => {
-  User.findOne({
+  User.findOne({ //findOne 은 객체를 가지고온다
     where: { userid: req.body.userid, pw: req.body.pw },
   }).then((result) => {
     console.log('User findOne:', result)
@@ -62,9 +65,14 @@ exports.profile_edit = (req, res) => {
 
     // 업데이트 여부에 따라 result에 [ 1 ] 혹은 [ 0 ] 이 담김
     // 따라서 if문을 이용하여 result의 0번 인덱스가 1일 경우에 성공, 그렇지 않으면 실패로 응답
+    //1,0 / true,false 1=true 0=false
+    // null, undefinded -> false
+
     if (result[0]) res.send({ result: true })
     else res.send({ result: false })
   })
+
+  //
   // const data = {
   //   ...req.body,
   //   id: req.params.id,
@@ -78,7 +86,7 @@ exports.profile_delete = (req, res) => {
   User.destroy({
     where: { id: req.params.id },
   }).then((result) => {
-    console.log('User destroy:', result) // 1 or 0
+    console.log('User destroy:', result) // 삭제되었으면1 or 삭제안되었으면0
 
     // 삭제 여부에 따라 result에 1 혹은 0 이 담김
     // 따라서 if문을 이용하여 result가 1일 경우에 성공, 그렇지 않으면 실패로 응답
