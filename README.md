@@ -5,4 +5,8 @@ SeSAC 강의 코드 관리폴더
 잘 하고 복습도하고 노력도해보자
 
 
--git branch test
+-git branch test(ex. 로그인 ui 완료)
+-git branch test(ex. 로그인 api)
+
+-git brancsh test3 수정
+
