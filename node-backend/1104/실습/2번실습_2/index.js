@@ -11,13 +11,11 @@ app.use(express.urlencoded({extended:true}));
 
 app.use(session({
     secret:"secret key",
-    resave: true ,
+    resave:  false ,
     saveUninitialized: true , 
-    cookie:{
-        httpOnly : true ,
 
-    },
 })) 
+
 
 
 app.get("/",(req,res)=>{
@@ -27,7 +25,7 @@ app.get("/",(req,res)=>{
 
 app.get("/get", (req,res) => {
     req.session.user="dahyun"
-        res.send('set session')
+        res.send('set session');
     
 })
 
