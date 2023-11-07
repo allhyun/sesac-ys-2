@@ -6,7 +6,9 @@ SeSAC 강의 코드 관리폴더
 
 
 -git branch test(ex. 로그인 ui 완료)
--git branch test(ex. 로그인 api)
+-git branch test(ex. 로그인 api) 수정
 
--git brancsh test3 수정
+-git brancsh test3
+
+prt test
 
