@@ -23,11 +23,12 @@ app.get("/",(req,res)=>{
 })
 
 
-app.get("/get", (req,res) => {
+app.get("/set", (req,res) => {
     req.session.user="dahyun"
         res.send('set session');
     
 })
+
 
 app.listen(port, ()=>{
     console.log( "Server Port : ", port );
