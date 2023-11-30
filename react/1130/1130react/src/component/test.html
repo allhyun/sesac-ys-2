@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const obj={
+      name:'dh',
+      aaa: function() {
+        console.log("함수 선언문:",this)
+
+      }
+    }
+
+    const obj2={
+      name:'dd',
+      bbb: () => {//정적바인딩
+      console.log("함수 :",this)
+
+    }
+  }
+
+    obj.aaa();
+    obj2.bbb();
+  </script>
+  
+</body>
+</html>
