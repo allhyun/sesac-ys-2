@@ -66,23 +66,34 @@ function HandlerFunc() {
     </select>
     배경색:
     <select name="bgcolor" onChange={HandlebgColor}>
-     <option value="흰색">흰색</option>
-     <option value="파란색">파란색</option>
-     <option value="검정색">검정색</option>
-     <option value="노란색">노란색</option>
+     <option value="white">흰색</option>
+     <option value="blue">파란색</option>
+     <option value="black">검정색</option>
+     <option value="yellow">노란색</option>
     </select>
     글자색:
     <select name="Fcolor" onChange={HandleFColor}>
-     <option value="흰색">흰색</option>
-     <option value="파란색">파란색</option>
-     <option value="검정색">검정색</option>
-     <option value="노란색">노란색</option>
+     <option value="white">흰색</option>
+     <option value="blue">파란색</option>
+     <option value="black">검정색</option>
+     <option value="yellow">노란색</option>
     </select>
     <br/>
     내용:
     <input type="text" onChange={HandleInput}/>
+    <div
+        style={{
+          backgroundColor: bgColor,
+          color: Color,
+          width: "100px",
+          height: "20px",
+          display: "inline-block",
+        }}
+        >
+        {input}
+      </div>
     <div>
-      <img src={img}/>
+      <img src={`/${img}.jpeg`} alt={img}/>
     </div>
 
 
