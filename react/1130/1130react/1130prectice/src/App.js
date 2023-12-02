@@ -4,6 +4,8 @@ import PrecStateClass from "./component/PrecStateClass"
 import PrecStateFunction from "./component/PrecStateFunction"
 import HandlerEX from './component/ex/HandlerEx';
 import HandlerFunc from './component/ex/HandlerFunc'; 
+import Practice from './component/Practice'; 
+
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
       <PrecStateFunction />
       <HandlerEX />
       <HandlerFunc />
+
+      <Practice/>
 
 
     </div>
