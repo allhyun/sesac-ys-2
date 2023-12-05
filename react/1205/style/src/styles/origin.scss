@@ -1,0 +1,70 @@
+$color-main : red;
+
+
+// style 코드블록을 @mixin을 사용하여 함수처럼 사용
+@mixin box-width($size) {
+  width: $size;
+  height: $size;
+
+}
+
+// 사용할땐 @include를사용
+.box1 {
+  @include box-width(100px);
+  background-color: blue;
+
+}
+.box2 {
+  @include box-width(200px);
+  background-color: green;
+}
+
+.scss-parents {
+  color:$color-main;
+  // // width: 100vw - 200; 왜 안될까~?
+  // background-color: yellow;
+}
+
+.scss-parents  {
+  .ul{
+    background-color: black;
+    color: white;
+  }
+
+  &:hover {
+    cursor :pointer;
+  }
+
+}
+.btn{
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-primary{
+  @extend .btn;
+  background-color: aqua
+};
+
+//네모네모
+
+.origin-sass {
+  display :flex;
+  .box{
+    @include box-width(100px);
+
+    &.red {
+      background-color: red;
+    }
+
+    &.orange {
+      background-color: orange;
+    }
+    &.green {
+      background-color: green;
+    }
+  }
+}
+
+// .scss-parents > ul {} 원래 css에서 사용

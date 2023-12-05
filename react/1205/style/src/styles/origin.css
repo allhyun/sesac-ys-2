@@ -1,0 +1,24 @@
+.origin{
+  display: flex;
+}
+
+.origin .box{
+  width: 100px;
+  height: 100px;
+}
+
+.origin .red {
+  background-color: red;
+}
+
+.origin .orange {
+  background-color: orange;
+}
+
+.origin .green {
+  background-color: green;
+}
+.origin .yellow {
+  background-color: yellow;
+}
+
