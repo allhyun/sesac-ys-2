@@ -1,0 +1,27 @@
+.pracCss{
+  display: flex;
+}
+
+.pracCss .box{
+  width: 100px;
+  height: 100px;
+}
+
+.pracCss .one {
+  background-color: red;
+}
+
+.pracCss .two {
+  background-color: orange;
+}
+
+.pracCss .three {
+  background-color: green;
+}
+.pracCss .four {
+  background-color: yellow;
+}
+.pracCss .five {
+  background-color: rgb(55, 55, 128);
+}
+

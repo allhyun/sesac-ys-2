@@ -1,6 +1,6 @@
 import './App.css';
 // import OriginsCss from './component/OriginCss';
-import CssModule from './component/CssModule';
+// import CssModule from './component/CssModule';
 import SassComponent from './component/SassComponent';
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <div>
       {/* <OriginsCss /> */}
       <hr></hr>
-      <CssModule />
+      {/* <CssModule /> */}
       <hr/>
       <SassComponent />
     </div>
