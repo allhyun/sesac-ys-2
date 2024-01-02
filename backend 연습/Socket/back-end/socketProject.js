@@ -9,9 +9,11 @@ const cors = require("cors");
 app.use(cors());
 const io = require("socket.io")(server, {
   cors: {
-    origin: "http://localhost:3001",
+    origin: "http://localhost:3002",
   },
 });
+
+
 
 
 
